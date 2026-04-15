@@ -40,7 +40,9 @@ def evaluate_classifier(classifier: ITicketClassifier, items: List[DatasetItem])
     - per_class: precision/recall/f1/support
     """
     labels = _labels()
-    confusion: Dict[str, Dict[str, int]] = {l.value: {p.value: 0 for p in labels} for l in labels}
+    confusion: Dict[str, Dict[str, int]] = {
+        label.value: {p.value: 0 for p in labels} for label in labels
+    }
 
     correct = 0
     for it in items:

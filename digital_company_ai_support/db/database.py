@@ -27,5 +27,5 @@ SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
 
 def init_db() -> None:
-    from digital_company_ai_support.db.models import TicketEntity
+    from digital_company_ai_support.db.models import TicketEntity  # noqa: F401
     Base.metadata.create_all(bind=engine)
